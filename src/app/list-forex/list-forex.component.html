@@ -1,0 +1,30 @@
+<app-header></app-header>
+<h2 style="text-align: center;" class="pt-2">List Treding</h2>
+<div class="p-5" style="font-size: 15px;">
+  <table class="table table-hover" align="center" style="width: 90%">
+    <thead class="black white-text">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Treder Id</th>
+        <th scope="col">Treder Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let e of treding| paginate: { itemsPerPage: 5, currentPage: p  }; let i=index">
+        <td>{{e.id}}</td>
+        <td>{{e.traderId}}</td>
+        <td>{{e.traderName}}</td>
+        <td><button class="btn btn-warning m-1">Update</button>
+          <button onclick="alert('Data Dihapus')" class="btn btn-outline-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  <div style="padding-left: 510px;">
+    <button class="btn btn-primary m-2" (click)="getAll()">Refresh</button>
+    <button class="btn btn-primary">Download</button>
+  </div>
+</div>
+

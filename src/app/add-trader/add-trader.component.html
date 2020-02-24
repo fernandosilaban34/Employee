@@ -1,0 +1,18 @@
+<app-header></app-header>
+<ng-container>
+  <h2 style="text-align: center; padding-top: 20px;">Create New Trader</h2>
+  <form [ngStyle]="titleStyles">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Treder ID : </label>
+        <input type="text" class="form-control" placeholder="ID" [(ngModel)] = "treding.traderId" name="traderId" id="traderId" >
+      </div>
+      <div class="form-group col-md-6">
+        <label>Trader Name : </label>
+        <input type="text" class="form-control" placeholder="Name" [(ngModel)] = "treding.traderName"
+          name="traderName" id="traderName">
+      </div>
+    </div>
+    <button class="btn btn-primary"  (click) = "addTrader()">Save</button>
+  </form>
+</ng-container>
